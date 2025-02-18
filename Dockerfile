@@ -1,7 +1,6 @@
 FROM alpine:3.21
 
 RUN apk add \
-    --repository=http://dl-cdn.alpinelinux.org/alpine/edge/community/ \
     --no-cache \
     coreutils \
     util-linux \
@@ -16,12 +15,13 @@ RUN apk add \
     fish \
     git \
     micro \
-    lsd \
     openssh \
     sudo \
     mkvtoolnix \
     ffmpeg \
     go
+
+RUN apk add --repository=https://dl-cdn.alpinelinux.org/alpine/edge/community lsd
 
 # Support sudo.
 RUN useradd -m -s /usr/bin/fish -u 99 -g 100 user && echo "user:1" | chpasswd && \
