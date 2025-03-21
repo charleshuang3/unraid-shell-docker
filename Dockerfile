@@ -19,7 +19,9 @@ RUN apk add \
     sudo \
     mkvtoolnix \
     ffmpeg \
-    go
+    go \
+    python3 \
+    mediainfo
 
 RUN apk add --repository=https://dl-cdn.alpinelinux.org/alpine/edge/community lsd
 
