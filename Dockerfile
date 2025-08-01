@@ -37,6 +37,4 @@ WORKDIR /home/user
 USER user
 RUN go install github.com/charleshuang3/subget@latest
 
-RUN npm install -g @google/gemini-cli
-
 ENTRYPOINT [ "tail", "-f", "/dev/null" ]
