@@ -36,7 +36,7 @@ WORKDIR /home/user
 USER user
 RUN go install github.com/charleshuang3/subget@latest
 
-RUN npm config set prefix ~/.npm
+RUN npm config set prefix /home/user/.npm
 RUN npm install -g @google/gemini-cli
 
 ENTRYPOINT [ "tail", "-f", "/dev/null" ]
