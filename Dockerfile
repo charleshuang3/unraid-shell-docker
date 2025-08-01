@@ -21,7 +21,8 @@ RUN apk add \
     ffmpeg \
     go \
     python3 \
-    mediainfo
+    mediainfo \
+    npm
 
 RUN apk add --repository=https://dl-cdn.alpinelinux.org/alpine/edge/community lsd
 
@@ -35,5 +36,7 @@ WORKDIR /home/user
 
 USER user
 RUN go install github.com/charleshuang3/subget@latest
+
+RUN npm install -g @google/gemini-cli
 
 ENTRYPOINT [ "tail", "-f", "/dev/null" ]
