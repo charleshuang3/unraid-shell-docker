@@ -4,6 +4,8 @@ on:
   schedule:
     - cron: "0 4 * * 5" # Every Fri at 4:00 AM UTC
   workflow_dispatch:    # Allows for manual runs
+  push:                 # On Push
+    branches: [ main ]
 
 env:
   REGISTRY: ghcr.io
