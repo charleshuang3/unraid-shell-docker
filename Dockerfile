@@ -1,4 +1,4 @@
-FROM alpine:3.21
+FROM alpine:3.22
 
 RUN apk add \
     --no-cache \
@@ -22,9 +22,8 @@ RUN apk add \
     go \
     python3 \
     mediainfo \
-    npm
-
-RUN apk add --repository=https://dl-cdn.alpinelinux.org/alpine/edge/community lsd
+    npm \
+    lsd
 
 # Support sudo.
 RUN useradd -m -s /usr/bin/fish -u 99 -g 100 user && echo "user:1" | chpasswd && \
