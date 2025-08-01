@@ -25,6 +25,8 @@ RUN apk add \
     npm \
     lsd
 
+RUN npm install -g @google/gemini-cli
+
 # Support sudo.
 RUN useradd -m -s /usr/bin/fish -u 99 -g 100 user && echo "user:1" | chpasswd && \
     echo "user ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
@@ -35,8 +37,5 @@ WORKDIR /home/user
 
 USER user
 RUN go install github.com/charleshuang3/subget@latest
-
-RUN npm config set prefix /home/user/.npm
-RUN npm install -g @google/gemini-cli
 
 ENTRYPOINT [ "tail", "-f", "/dev/null" ]
