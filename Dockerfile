@@ -23,9 +23,8 @@ RUN apk add \
     python3 \
     mediainfo \
     npm \
-    lsd
-
-RUN npm install -g @google/gemini-cli && npm install -g @charmland/crush
+    lsd \
+    zellij
 
 # Support sudo.
 RUN useradd -m -s /usr/bin/fish -u 99 -g 100 user && echo "user:1" | chpasswd && \
