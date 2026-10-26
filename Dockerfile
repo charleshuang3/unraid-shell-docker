@@ -24,7 +24,9 @@ RUN apk add \
     mediainfo \
     npm \
     lsd \
-    zellij
+    zellij \
+    fd \
+    ripgrep
 
 # Support sudo.
 RUN useradd -m -s /usr/bin/fish -u 99 -g 100 user && echo "user:1" | chpasswd && \
